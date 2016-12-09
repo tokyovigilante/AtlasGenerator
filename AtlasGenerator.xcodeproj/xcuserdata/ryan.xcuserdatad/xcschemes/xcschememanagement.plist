@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>msdfgen.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>94BCFC3B1DF96B79004A5B06</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94BCFC4D1DF9F053004A5B06</key>
 		<dict>
 			<key>primary</key>
 			<true/>

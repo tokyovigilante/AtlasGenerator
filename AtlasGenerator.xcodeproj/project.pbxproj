@@ -8,6 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		94BCFC401DF96B79004A5B06 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC3F1DF96B79004A5B06 /* main.swift */; };
+		94BCFC471DF96C87004A5B06 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC461DF96C87004A5B06 /* ConsoleIO.swift */; };
+		94BCFC491DF96D3D004A5B06 /* AtlasGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC481DF96D3D004A5B06 /* AtlasGenerator.swift */; };
+		94BCFC801DFA8FCC004A5B06 /* msdfgen.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC7F1DFA8FCC004A5B06 /* msdfgen.h */; };
+		94BCFC9D1DFA8FDF004A5B06 /* arithmetics.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC821DFA8FDE004A5B06 /* arithmetics.hpp */; };
+		94BCFC9E1DFA8FDF004A5B06 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC831DFA8FDE004A5B06 /* Bitmap.cpp */; };
+		94BCFC9F1DFA8FDF004A5B06 /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC841DFA8FDE004A5B06 /* Bitmap.h */; };
+		94BCFCA01DFA8FDF004A5B06 /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC851DFA8FDE004A5B06 /* Contour.cpp */; };
+		94BCFCA11DFA8FDF004A5B06 /* Contour.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC861DFA8FDE004A5B06 /* Contour.h */; };
+		94BCFCA21DFA8FDF004A5B06 /* edge-coloring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC871DFA8FDE004A5B06 /* edge-coloring.cpp */; };
+		94BCFCA31DFA8FDF004A5B06 /* edge-coloring.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC881DFA8FDE004A5B06 /* edge-coloring.h */; };
+		94BCFCA41DFA8FDF004A5B06 /* edge-segments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC891DFA8FDE004A5B06 /* edge-segments.cpp */; };
+		94BCFCA51DFA8FDF004A5B06 /* edge-segments.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC8A1DFA8FDE004A5B06 /* edge-segments.h */; };
+		94BCFCA61DFA8FDF004A5B06 /* EdgeColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC8B1DFA8FDE004A5B06 /* EdgeColor.h */; };
+		94BCFCA71DFA8FDF004A5B06 /* EdgeHolder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC8C1DFA8FDE004A5B06 /* EdgeHolder.cpp */; };
+		94BCFCA81DFA8FDF004A5B06 /* EdgeHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC8D1DFA8FDE004A5B06 /* EdgeHolder.h */; };
+		94BCFCA91DFA8FDF004A5B06 /* equation-solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC8E1DFA8FDE004A5B06 /* equation-solver.cpp */; };
+		94BCFCAA1DFA8FDF004A5B06 /* equation-solver.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC8F1DFA8FDE004A5B06 /* equation-solver.h */; };
+		94BCFCAB1DFA8FDF004A5B06 /* msdfgen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC901DFA8FDE004A5B06 /* msdfgen.cpp */; };
+		94BCFCAC1DFA8FDF004A5B06 /* render-sdf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC911DFA8FDE004A5B06 /* render-sdf.cpp */; };
+		94BCFCAD1DFA8FDF004A5B06 /* render-sdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC921DFA8FDE004A5B06 /* render-sdf.h */; };
+		94BCFCAE1DFA8FDF004A5B06 /* save-bmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC931DFA8FDE004A5B06 /* save-bmp.cpp */; };
+		94BCFCAF1DFA8FDF004A5B06 /* save-bmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC941DFA8FDE004A5B06 /* save-bmp.h */; };
+		94BCFCB01DFA8FDF004A5B06 /* shape-description.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC951DFA8FDE004A5B06 /* shape-description.cpp */; };
+		94BCFCB11DFA8FDF004A5B06 /* shape-description.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC961DFA8FDE004A5B06 /* shape-description.h */; };
+		94BCFCB21DFA8FDF004A5B06 /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC971DFA8FDE004A5B06 /* Shape.cpp */; };
+		94BCFCB31DFA8FDF004A5B06 /* Shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC981DFA8FDE004A5B06 /* Shape.h */; };
+		94BCFCB41DFA8FDF004A5B06 /* SignedDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC991DFA8FDE004A5B06 /* SignedDistance.cpp */; };
+		94BCFCB51DFA8FDF004A5B06 /* SignedDistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC9A1DFA8FDE004A5B06 /* SignedDistance.h */; };
+		94BCFCB61DFA8FDF004A5B06 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC9B1DFA8FDE004A5B06 /* Vector2.cpp */; };
+		94BCFCB71DFA8FDF004A5B06 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC9C1DFA8FDE004A5B06 /* Vector2.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,12 +53,51 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		94BCFC3C1DF96B79004A5B06 /* AtlasGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AtlasGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BCFC3C1DF96B79004A5B06 /* atlasgenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = atlasgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BCFC3F1DF96B79004A5B06 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		94BCFC461DF96C87004A5B06 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
+		94BCFC481DF96D3D004A5B06 /* AtlasGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtlasGenerator.swift; sourceTree = "<group>"; };
+		94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmsdfgen.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BCFC531DF9F09F004A5B06 /* AtlasGenerator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AtlasGenerator-Bridging-Header.h"; sourceTree = "<group>"; };
+		94BCFC7F1DFA8FCC004A5B06 /* msdfgen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = msdfgen.h; path = AtlasGenerator/msdfgen/msdfgen.h; sourceTree = "<group>"; };
+		94BCFC821DFA8FDE004A5B06 /* arithmetics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = arithmetics.hpp; sourceTree = "<group>"; };
+		94BCFC831DFA8FDE004A5B06 /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		94BCFC841DFA8FDE004A5B06 /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		94BCFC851DFA8FDE004A5B06 /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Contour.cpp; sourceTree = "<group>"; };
+		94BCFC861DFA8FDE004A5B06 /* Contour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contour.h; sourceTree = "<group>"; };
+		94BCFC871DFA8FDE004A5B06 /* edge-coloring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "edge-coloring.cpp"; sourceTree = "<group>"; };
+		94BCFC881DFA8FDE004A5B06 /* edge-coloring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "edge-coloring.h"; sourceTree = "<group>"; };
+		94BCFC891DFA8FDE004A5B06 /* edge-segments.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "edge-segments.cpp"; sourceTree = "<group>"; };
+		94BCFC8A1DFA8FDE004A5B06 /* edge-segments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "edge-segments.h"; sourceTree = "<group>"; };
+		94BCFC8B1DFA8FDE004A5B06 /* EdgeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeColor.h; sourceTree = "<group>"; };
+		94BCFC8C1DFA8FDE004A5B06 /* EdgeHolder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EdgeHolder.cpp; sourceTree = "<group>"; };
+		94BCFC8D1DFA8FDE004A5B06 /* EdgeHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeHolder.h; sourceTree = "<group>"; };
+		94BCFC8E1DFA8FDE004A5B06 /* equation-solver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "equation-solver.cpp"; sourceTree = "<group>"; };
+		94BCFC8F1DFA8FDE004A5B06 /* equation-solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "equation-solver.h"; sourceTree = "<group>"; };
+		94BCFC901DFA8FDE004A5B06 /* msdfgen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = msdfgen.cpp; sourceTree = "<group>"; };
+		94BCFC911DFA8FDE004A5B06 /* render-sdf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "render-sdf.cpp"; sourceTree = "<group>"; };
+		94BCFC921DFA8FDE004A5B06 /* render-sdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "render-sdf.h"; sourceTree = "<group>"; };
+		94BCFC931DFA8FDE004A5B06 /* save-bmp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "save-bmp.cpp"; sourceTree = "<group>"; };
+		94BCFC941DFA8FDE004A5B06 /* save-bmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "save-bmp.h"; sourceTree = "<group>"; };
+		94BCFC951DFA8FDE004A5B06 /* shape-description.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "shape-description.cpp"; sourceTree = "<group>"; };
+		94BCFC961DFA8FDE004A5B06 /* shape-description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shape-description.h"; sourceTree = "<group>"; };
+		94BCFC971DFA8FDE004A5B06 /* Shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
+		94BCFC981DFA8FDE004A5B06 /* Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
+		94BCFC991DFA8FDE004A5B06 /* SignedDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SignedDistance.cpp; sourceTree = "<group>"; };
+		94BCFC9A1DFA8FDE004A5B06 /* SignedDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedDistance.h; sourceTree = "<group>"; };
+		94BCFC9B1DFA8FDE004A5B06 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
+		94BCFC9C1DFA8FDE004A5B06 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		94BCFC391DF96B79004A5B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC4B1DF9F053004A5B06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +110,7 @@
 		94BCFC331DF96B79004A5B06 = {
 			isa = PBXGroup;
 			children = (
+				94BCFC521DF9F05E004A5B06 /* msdfgen */,
 				94BCFC3E1DF96B79004A5B06 /* AtlasGenerator */,
 				94BCFC3D1DF96B79004A5B06 /* Products */,
 			);
@@ -49,7 +119,8 @@
 		94BCFC3D1DF96B79004A5B06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94BCFC3C1DF96B79004A5B06 /* AtlasGenerator */,
+				94BCFC3C1DF96B79004A5B06 /* atlasgenerator */,
+				94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,11 +129,83 @@
 			isa = PBXGroup;
 			children = (
 				94BCFC3F1DF96B79004A5B06 /* main.swift */,
+				94BCFC481DF96D3D004A5B06 /* AtlasGenerator.swift */,
+				94BCFC461DF96C87004A5B06 /* ConsoleIO.swift */,
 			);
 			path = AtlasGenerator;
 			sourceTree = "<group>";
 		};
+		94BCFC521DF9F05E004A5B06 /* msdfgen */ = {
+			isa = PBXGroup;
+			children = (
+				94BCFC811DFA8FDE004A5B06 /* core */,
+				94BCFC7F1DFA8FCC004A5B06 /* msdfgen.h */,
+				94BCFC531DF9F09F004A5B06 /* AtlasGenerator-Bridging-Header.h */,
+			);
+			name = msdfgen;
+			sourceTree = "<group>";
+		};
+		94BCFC811DFA8FDE004A5B06 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				94BCFC821DFA8FDE004A5B06 /* arithmetics.hpp */,
+				94BCFC831DFA8FDE004A5B06 /* Bitmap.cpp */,
+				94BCFC841DFA8FDE004A5B06 /* Bitmap.h */,
+				94BCFC851DFA8FDE004A5B06 /* Contour.cpp */,
+				94BCFC861DFA8FDE004A5B06 /* Contour.h */,
+				94BCFC871DFA8FDE004A5B06 /* edge-coloring.cpp */,
+				94BCFC881DFA8FDE004A5B06 /* edge-coloring.h */,
+				94BCFC891DFA8FDE004A5B06 /* edge-segments.cpp */,
+				94BCFC8A1DFA8FDE004A5B06 /* edge-segments.h */,
+				94BCFC8B1DFA8FDE004A5B06 /* EdgeColor.h */,
+				94BCFC8C1DFA8FDE004A5B06 /* EdgeHolder.cpp */,
+				94BCFC8D1DFA8FDE004A5B06 /* EdgeHolder.h */,
+				94BCFC8E1DFA8FDE004A5B06 /* equation-solver.cpp */,
+				94BCFC8F1DFA8FDE004A5B06 /* equation-solver.h */,
+				94BCFC901DFA8FDE004A5B06 /* msdfgen.cpp */,
+				94BCFC911DFA8FDE004A5B06 /* render-sdf.cpp */,
+				94BCFC921DFA8FDE004A5B06 /* render-sdf.h */,
+				94BCFC931DFA8FDE004A5B06 /* save-bmp.cpp */,
+				94BCFC941DFA8FDE004A5B06 /* save-bmp.h */,
+				94BCFC951DFA8FDE004A5B06 /* shape-description.cpp */,
+				94BCFC961DFA8FDE004A5B06 /* shape-description.h */,
+				94BCFC971DFA8FDE004A5B06 /* Shape.cpp */,
+				94BCFC981DFA8FDE004A5B06 /* Shape.h */,
+				94BCFC991DFA8FDE004A5B06 /* SignedDistance.cpp */,
+				94BCFC9A1DFA8FDE004A5B06 /* SignedDistance.h */,
+				94BCFC9B1DFA8FDE004A5B06 /* Vector2.cpp */,
+				94BCFC9C1DFA8FDE004A5B06 /* Vector2.h */,
+			);
+			name = core;
+			path = AtlasGenerator/msdfgen/core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		94BCFC4C1DF9F053004A5B06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BCFCAF1DFA8FDF004A5B06 /* save-bmp.h in Headers */,
+				94BCFCAD1DFA8FDF004A5B06 /* render-sdf.h in Headers */,
+				94BCFCB71DFA8FDF004A5B06 /* Vector2.h in Headers */,
+				94BCFC9D1DFA8FDF004A5B06 /* arithmetics.hpp in Headers */,
+				94BCFCA51DFA8FDF004A5B06 /* edge-segments.h in Headers */,
+				94BCFCB31DFA8FDF004A5B06 /* Shape.h in Headers */,
+				94BCFCA31DFA8FDF004A5B06 /* edge-coloring.h in Headers */,
+				94BCFCA11DFA8FDF004A5B06 /* Contour.h in Headers */,
+				94BCFCAA1DFA8FDF004A5B06 /* equation-solver.h in Headers */,
+				94BCFCA61DFA8FDF004A5B06 /* EdgeColor.h in Headers */,
+				94BCFCA81DFA8FDF004A5B06 /* EdgeHolder.h in Headers */,
+				94BCFC9F1DFA8FDF004A5B06 /* Bitmap.h in Headers */,
+				94BCFCB51DFA8FDF004A5B06 /* SignedDistance.h in Headers */,
+				94BCFC801DFA8FCC004A5B06 /* msdfgen.h in Headers */,
+				94BCFCB11DFA8FDF004A5B06 /* shape-description.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		94BCFC3B1DF96B79004A5B06 /* AtlasGenerator */ = {
@@ -79,8 +222,25 @@
 			);
 			name = AtlasGenerator;
 			productName = AtlasGenerator;
-			productReference = 94BCFC3C1DF96B79004A5B06 /* AtlasGenerator */;
+			productReference = 94BCFC3C1DF96B79004A5B06 /* atlasgenerator */;
 			productType = "com.apple.product-type.tool";
+		};
+		94BCFC4D1DF9F053004A5B06 /* msdfgen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94BCFC4F1DF9F053004A5B06 /* Build configuration list for PBXNativeTarget "msdfgen" */;
+			buildPhases = (
+				94BCFC4A1DF9F053004A5B06 /* Sources */,
+				94BCFC4B1DF9F053004A5B06 /* Frameworks */,
+				94BCFC4C1DF9F053004A5B06 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = msdfgen;
+			productName = msdfgen;
+			productReference = 94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -93,6 +253,11 @@
 				ORGANIZATIONNAME = "Ryan Walklin";
 				TargetAttributes = {
 					94BCFC3B1DF96B79004A5B06 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					94BCFC4D1DF9F053004A5B06 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -111,6 +276,7 @@
 			projectRoot = "";
 			targets = (
 				94BCFC3B1DF96B79004A5B06 /* AtlasGenerator */,
+				94BCFC4D1DF9F053004A5B06 /* msdfgen */,
 			);
 		};
 /* End PBXProject section */
@@ -120,7 +286,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BCFC491DF96D3D004A5B06 /* AtlasGenerator.swift in Sources */,
 				94BCFC401DF96B79004A5B06 /* main.swift in Sources */,
+				94BCFC471DF96C87004A5B06 /* ConsoleIO.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC4A1DF9F053004A5B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BCFCB41DFA8FDF004A5B06 /* SignedDistance.cpp in Sources */,
+				94BCFCA21DFA8FDF004A5B06 /* edge-coloring.cpp in Sources */,
+				94BCFCB21DFA8FDF004A5B06 /* Shape.cpp in Sources */,
+				94BCFCAC1DFA8FDF004A5B06 /* render-sdf.cpp in Sources */,
+				94BCFCA01DFA8FDF004A5B06 /* Contour.cpp in Sources */,
+				94BCFCB61DFA8FDF004A5B06 /* Vector2.cpp in Sources */,
+				94BCFCA91DFA8FDF004A5B06 /* equation-solver.cpp in Sources */,
+				94BCFCA41DFA8FDF004A5B06 /* edge-segments.cpp in Sources */,
+				94BCFCAB1DFA8FDF004A5B06 /* msdfgen.cpp in Sources */,
+				94BCFC9E1DFA8FDF004A5B06 /* Bitmap.cpp in Sources */,
+				94BCFCA71DFA8FDF004A5B06 /* EdgeHolder.cpp in Sources */,
+				94BCFCB01DFA8FDF004A5B06 /* shape-description.cpp in Sources */,
+				94BCFCAE1DFA8FDF004A5B06 /* save-bmp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +406,11 @@
 		94BCFC441DF96B79004A5B06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = atlasgenerator;
+				SWIFT_OBJC_BRIDGING_HEADER = "AtlasGenerator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -226,8 +418,31 @@
 		94BCFC451DF96B79004A5B06 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = atlasgenerator;
+				SWIFT_OBJC_BRIDGING_HEADER = "AtlasGenerator-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		94BCFC501DF9F053004A5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		94BCFC511DF9F053004A5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -248,6 +463,14 @@
 			buildConfigurations = (
 				94BCFC441DF96B79004A5B06 /* Debug */,
 				94BCFC451DF96B79004A5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		94BCFC4F1DF9F053004A5B06 /* Build configuration list for PBXNativeTarget "msdfgen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BCFC501DF9F053004A5B06 /* Debug */,
+				94BCFC511DF9F053004A5B06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

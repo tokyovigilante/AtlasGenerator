@@ -8,5 +8,14 @@
 
 import Foundation
 
-print("Hello, World!")
 
+ConsoleIO.printWelcome()
+
+if CommandLine.argc < 2 {
+    print("no font provided")
+    ConsoleIO.printUsage()
+    exit(-1)
+}
+
+let atlasGenerator = AtlasGenerator()
+atlasGenerator.staticMode()
