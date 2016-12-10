@@ -38,7 +38,21 @@
 		94BCFCB51DFA8FDF004A5B06 /* SignedDistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC9A1DFA8FDE004A5B06 /* SignedDistance.h */; };
 		94BCFCB61DFA8FDF004A5B06 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC9B1DFA8FDE004A5B06 /* Vector2.cpp */; };
 		94BCFCB71DFA8FDF004A5B06 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFC9C1DFA8FDE004A5B06 /* Vector2.h */; };
+		94BCFCBA1DFA9974004A5B06 /* libmsdfgen.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */; };
+		94BCFCBD1DFAC3C4004A5B06 /* MSDFGenBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */; };
+		94BCFCBE1DFAC3C4004A5B06 /* MSDFGenBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFCBC1DFAC3C4004A5B06 /* MSDFGenBridge.mm */; };
+		94BCFCC01DFAD85E004A5B06 /* ShapeDescriptionWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFCBF1DFAD85E004A5B06 /* ShapeDescriptionWriter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94BCFCB81DFA996D004A5B06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94BCFC341DF96B79004A5B06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94BCFC4D1DF9F053004A5B06;
+			remoteInfo = msdfgen;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		94BCFC3A1DF96B79004A5B06 /* CopyFiles */ = {
@@ -87,6 +101,9 @@
 		94BCFC9A1DFA8FDE004A5B06 /* SignedDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedDistance.h; sourceTree = "<group>"; };
 		94BCFC9B1DFA8FDE004A5B06 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
 		94BCFC9C1DFA8FDE004A5B06 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDFGenBridge.h; path = AtlasGenerator/msdfgen/MSDFGenBridge.h; sourceTree = "<group>"; };
+		94BCFCBC1DFAC3C4004A5B06 /* MSDFGenBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MSDFGenBridge.mm; path = AtlasGenerator/msdfgen/MSDFGenBridge.mm; sourceTree = "<group>"; };
+		94BCFCBF1DFAD85E004A5B06 /* ShapeDescriptionWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeDescriptionWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BCFCBA1DFA9974004A5B06 /* libmsdfgen.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +148,7 @@
 			children = (
 				94BCFC3F1DF96B79004A5B06 /* main.swift */,
 				94BCFC481DF96D3D004A5B06 /* AtlasGenerator.swift */,
+				94BCFCBF1DFAD85E004A5B06 /* ShapeDescriptionWriter.swift */,
 				94BCFC461DF96C87004A5B06 /* ConsoleIO.swift */,
 			);
 			path = AtlasGenerator;
@@ -141,6 +160,8 @@
 				94BCFC811DFA8FDE004A5B06 /* core */,
 				94BCFC7F1DFA8FCC004A5B06 /* msdfgen.h */,
 				94BCFC531DF9F09F004A5B06 /* AtlasGenerator-Bridging-Header.h */,
+				94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */,
+				94BCFCBC1DFAC3C4004A5B06 /* MSDFGenBridge.mm */,
 			);
 			name = msdfgen;
 			sourceTree = "<group>";
@@ -193,6 +214,7 @@
 				94BCFC9D1DFA8FDF004A5B06 /* arithmetics.hpp in Headers */,
 				94BCFCA51DFA8FDF004A5B06 /* edge-segments.h in Headers */,
 				94BCFCB31DFA8FDF004A5B06 /* Shape.h in Headers */,
+				94BCFCBD1DFAC3C4004A5B06 /* MSDFGenBridge.h in Headers */,
 				94BCFCA31DFA8FDF004A5B06 /* edge-coloring.h in Headers */,
 				94BCFCA11DFA8FDF004A5B06 /* Contour.h in Headers */,
 				94BCFCAA1DFA8FDF004A5B06 /* equation-solver.h in Headers */,
@@ -219,6 +241,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				94BCFCB91DFA996D004A5B06 /* PBXTargetDependency */,
 			);
 			name = AtlasGenerator;
 			productName = AtlasGenerator;
@@ -288,6 +311,7 @@
 			files = (
 				94BCFC491DF96D3D004A5B06 /* AtlasGenerator.swift in Sources */,
 				94BCFC401DF96B79004A5B06 /* main.swift in Sources */,
+				94BCFCC01DFAD85E004A5B06 /* ShapeDescriptionWriter.swift in Sources */,
 				94BCFC471DF96C87004A5B06 /* ConsoleIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,12 +331,21 @@
 				94BCFCAB1DFA8FDF004A5B06 /* msdfgen.cpp in Sources */,
 				94BCFC9E1DFA8FDF004A5B06 /* Bitmap.cpp in Sources */,
 				94BCFCA71DFA8FDF004A5B06 /* EdgeHolder.cpp in Sources */,
+				94BCFCBE1DFAC3C4004A5B06 /* MSDFGenBridge.mm in Sources */,
 				94BCFCB01DFA8FDF004A5B06 /* shape-description.cpp in Sources */,
 				94BCFCAE1DFA8FDF004A5B06 /* save-bmp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94BCFCB91DFA996D004A5B06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94BCFC4D1DF9F053004A5B06 /* msdfgen */;
+			targetProxy = 94BCFCB81DFA996D004A5B06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		94BCFC411DF96B79004A5B06 /* Debug */ = {
@@ -429,6 +462,7 @@
 		94BCFC501DF9F053004A5B06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
@@ -439,6 +473,7 @@
 		94BCFC511DF9F053004A5B06 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;

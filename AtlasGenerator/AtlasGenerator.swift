@@ -10,6 +10,7 @@ import Foundation
 import CoreText
 import CoreGraphics
 
+
 class AtlasGenerator {
     
     func staticMode() {
@@ -82,24 +83,19 @@ class AtlasGenerator {
                 continue
             }
             if path.isEmpty {
+                print("Empty path for glyph \(glyph)")
                 continue
             }
             
-            path.apply(info: nil, function: { _, elementPointer in
-                let element = elementPointer.pointee
-                let command: String
-                let pointCount: Int
-                switch element.type {
-                case .moveToPoint: command = "moveTo"; pointCount = 1
-                case .addLineToPoint: command = "lineTo"; pointCount = 1
-                case .addQuadCurveToPoint: command = "quadCurveTo"; pointCount = 2
-                case .addCurveToPoint: command = "curveTo"; pointCount = 3
-                case .closeSubpath: command = "close"; pointCount = 0
-                }
-                let points = Array(UnsafeBufferPointer(start: element.points, count: pointCount))
-                Swift.print("\(command) \(points)")
-            })
-            
+            let descriptionWriter = ShapeDescriptionWriter(path: path)
+            guard let shapeDescription = descriptionWriter.generate() else {
+                print("Could not generate ShapeDescriptionWriter description for glyph \(glyph)")
+                continue
+            }
+            guard let shape = Shape(description: shapeDescription) else {
+                print("could not generate Shape from description for glyph \(glyph)")
+                
+            }
             /*
             context.addPath(path)
             context.fillPath()
@@ -126,8 +122,6 @@ class AtlasGenerator {
             
             origin.x += boundingRect.width + glyphMargin*/
         }
-        
-
         
     }
 }
