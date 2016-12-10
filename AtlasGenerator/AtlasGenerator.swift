@@ -94,8 +94,12 @@ class AtlasGenerator {
             }
             guard let shape = Shape(description: shapeDescription) else {
                 print("could not generate Shape from description for glyph \(glyph)")
-                
+                continue
             }
+            
+            shape.normalise()
+            var bitmap = [Float](repeating: 0.0, count: 32 * 32 * 3)
+            MSDFGenBridge.generateMSDF(&bitmap, width: 32, height: 32, shape: shape, range: 1.0, scaleX: 1.0, scaleY: 1.0, translateX: 0.0, translateY: 0.0, edgeThreshold: 1.0)
             /*
             context.addPath(path)
             context.fillPath()
