@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import CoreText
-import CoreGraphics
 import Cocoa
 
 class AtlasGenerator {
@@ -35,7 +33,7 @@ class AtlasGenerator {
     
     private func openFont(name: String) -> CTFont? {
         let font = CTFontCreateWithName((name as NSString), 28, nil)
-        let returnedFontName = /*CTFontCopyName(font, kCTFontStyleNameKey)*/CTFontCopyPostScriptName(font)
+        let returnedFontName = CTFontCopyPostScriptName(font)
         if returnedFontName as String == name {
             return font
         }
@@ -88,8 +86,14 @@ class AtlasGenerator {
         var imageData = [UInt8](repeating: 0, count: 1024 * 1024 * 4)
         
         for glyph in 0..<UInt16(glyphCount) {
+            
+            let cgFont = CTFontCopyGraphicsFont(font, nil)
+            let glyphName = cgFont.name(for: glyph) ?? "Unknown" as CFString
+            
             var boundingRect = CGRect()
             CTFontGetBoundingRectsForGlyphs(font, .horizontal, [glyph], &boundingRect, 1)
+            
+            print("\(glyphName): glyph \(glyph+1) of \(glyphCount), boundingRect: \(boundingRect)")
             
             if (origin.x + boundingRect.maxX + glyphMargin > glyphWidth) {
              origin.x = 0
@@ -121,16 +125,16 @@ class AtlasGenerator {
                         
             var bitmap = [UInt8](repeating: 0, count: Int(glyphWidth) * Int(glyphHeight) * 4)
             MSDFGenBridge.generateMSDF(&bitmap, width: Int32(glyphWidth), height: Int32(glyphHeight), shapeDesc: shapeDescription, range: 1.0, scaleX: 1.0, scaleY: 1.0, translateX: Float(glyphOriginX), translateY: Float(glyphOriginY), edgeThreshold: 1.0)
-            
+            /*
             let bitmapInfo: CGBitmapInfo = [ CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue) ]
             
             
             let context = CGContext.init(data: &bitmap, width: Int(glyphWidth), height: Int(glyphWidth), bitsPerComponent: 8, bytesPerRow: 4*Int(glyphWidth), space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: bitmapInfo.rawValue, releaseCallback: nil, releaseInfo: nil)
             guard let image = context?.makeImage() else {
                 return
-            }
-            let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
-            print(nsImage)
+            }*/
+            //let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
+            //print(nsImage)
             /*
             let imageRow = glyph / glyphWidth + glyph % glyphWidth
             let imageColumn = xyz

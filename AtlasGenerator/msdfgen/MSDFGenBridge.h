@@ -12,7 +12,7 @@
 
 /// Generates a multi-channel signed distance field. Edge colors must be assigned first! (see edgeColoringSimple)
 
-+(bool)generateMSDF:(nonnull uint8_t *)bitmap width:(int)width height:(int)height shapeDesc:(nonnull const char *)shapeDesc range:(float)range scaleX:(float)scaleX scaleY:(float)scaleY translateX:(float)translateX translateY:(float)translateY edgeThreshold:(float)edgeThreshold;
++(bool)generateMSDF:(nonnull uint8_t *)bitmap width:(int)width height:(int)height shapeDesc:(nonnull const char *)shapeDesc range:(float)range scaleX:(float)scaleX scaleY:(float)scaleY translateX:(float)translateX translateY:(float)translateY edgeThreshold:(float)edgeThreshold autoFrame:(bool)autoFrame;
 
 @end
 
