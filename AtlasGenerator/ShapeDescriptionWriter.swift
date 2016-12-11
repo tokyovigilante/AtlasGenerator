@@ -27,7 +27,7 @@ class ShapeDescriptionWriter {
         
         _startPoint = CGPoint()
         _currentPoint = _startPoint
-        _shapeDescription = ""
+        _shapeDescription = "@invert-y\n"
         _success = false
         
         let info = UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())

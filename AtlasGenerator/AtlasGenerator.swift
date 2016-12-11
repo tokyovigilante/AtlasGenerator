@@ -9,6 +9,8 @@
 import Foundation
 import Cocoa
 
+private let textureSize = 1024
+
 class AtlasGenerator {
     
     private (set) var glyphWidth: CGFloat = 0
@@ -32,7 +34,7 @@ class AtlasGenerator {
     }
     
     private func openFont(name: String) -> CTFont? {
-        let font = CTFontCreateWithName((name as NSString), 28, nil)
+        let font = CTFontCreateWithName((name as NSString), 30, nil)
         let returnedFontName = CTFontCopyPostScriptName(font)
         if returnedFontName as String == name {
             return font
@@ -74,6 +76,9 @@ class AtlasGenerator {
     
     private func renderGlyphs (font: CTFont) {
         
+        let insetWidth = glyphWidth - 2
+        let insetHeight = glyphHeight - 2
+        
         let glyphCount = CTFontGetGlyphCount(font)
         let glyphMargin = CGFloat(estimatedLineWidthForFont(font))
 
@@ -83,7 +88,8 @@ class AtlasGenerator {
         var origin = CGPoint(x: 0, y: fontAscent)
         var maxYCoordForLine: CGFloat = -1
         
-        var imageData = [UInt8](repeating: 0, count: 1024 * 1024 * 4)
+        var imageData = [UInt8](repeating: 0, count: textureSize * textureSize * 4)
+        let glyphsPerRow = textureSize / Int(glyphWidth * 4)
         
         for glyph in 0..<UInt16(glyphCount) {
             
@@ -115,7 +121,7 @@ class AtlasGenerator {
             if path.isEmpty {
                 print("Empty path for glyph \(glyph)")
                 continue
-            }
+            } 
             
             let descriptionWriter = ShapeDescriptionWriter(path: path)
             guard let shapeDescription = descriptionWriter.generate() else {
@@ -124,24 +130,27 @@ class AtlasGenerator {
             }
                         
             var bitmap = [UInt8](repeating: 0, count: Int(glyphWidth) * Int(glyphHeight) * 4)
-            MSDFGenBridge.generateMSDF(&bitmap, width: Int32(glyphWidth), height: Int32(glyphHeight), shapeDesc: shapeDescription, range: 1.0, scaleX: 1.0, scaleY: 1.0, translateX: Float(glyphOriginX), translateY: Float(glyphOriginY), edgeThreshold: 1.0)
+            let success = MSDFGenBridge.generateMSDF(&bitmap, width: Int32(glyphWidth), height: Int32(glyphHeight), shapeDesc: shapeDescription, translateX: 0, translateY: 0, edgeThreshold: 1.0, autoFrame: true, printMetrics: true)
+            if !success {
+                continue
+            }
             /*
             let bitmapInfo: CGBitmapInfo = [ CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue) ]
-            
             
             let context = CGContext.init(data: &bitmap, width: Int(glyphWidth), height: Int(glyphWidth), bitsPerComponent: 8, bytesPerRow: 4*Int(glyphWidth), space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: bitmapInfo.rawValue, releaseCallback: nil, releaseInfo: nil)
             guard let image = context?.makeImage() else {
                 return
-            }*/
-            //let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
-            //print(nsImage)
-            /*
-            let imageRow = glyph / glyphWidth + glyph % glyphWidth
-            let imageColumn = xyz
-            for i in 1..<30 {
-                memcpy(
-                copy based on imagerow/col first offset
-            }*/
+            }
+            let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
+            nsImage.isValid*/
+            
+            let imageRow = Int(glyph) / Int(glyphWidth)
+            let imageColumn = Int(glyph) % Int(glyphWidth)
+            
+            for i in 1..<Int(insetHeight) {
+                let offset = (imageRow * Int(glyphWidth) + i) * Int(textureSize) + imageColumn * Int(glyphWidth)
+                memcpy(&imageData+offset, &bitmap+i*Int(insetWidth), Int(glyphWidth)*4)
+            }
             /*
              context.addPath(path)
              context.fillPath()
@@ -174,16 +183,22 @@ class AtlasGenerator {
         let bitmapInfo: CGBitmapInfo = [ CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue) ]
         
         guard let context = CGContext(data: &imageData,
-                                      width: 1024,
-                                      height: 1024,
+                                      width: textureSize,
+                                      height: textureSize,
                                       bitsPerComponent: 8,
-                                      bytesPerRow: 1024*4,
+                                      bytesPerRow: textureSize*4,
                                       space: colorSpace,
                                       bitmapInfo: bitmapInfo.rawValue) else { return }
         
+        guard let image = context.makeImage() else {
+            return
+        }
+        let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
+        nsImage.isValid
+        
         // Turn off antialiasing so we only get fully-on or fully-off pixels.
         // This implicitly disables subpixel antialiasing and hinting.
-        context.setAllowsAntialiasing(false)
+        //context.setAllowsAntialiasing(false)
 
     }
 }

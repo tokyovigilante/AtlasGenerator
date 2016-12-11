@@ -14,13 +14,32 @@
 
 @implementation MSDFGenBridge
 
-+(bool)generateMSDF:(uint8_t *)bitmap width:(int)width height:(int)height shapeDesc:(const char *)shapeDesc range:(float)range translateX:(float)translateX translateY:(float)translateY edgeThreshold:(float)edgeThreshold autoFrame:(bool)autoFrame printMetrics:(bool)printMetrics {
++(bool)generateMSDF:(uint8_t *)bitmap width:(int)width height:(int)height shapeDesc:(const char *)shapeDesc translateX:(float)translateX translateY:(float)translateY edgeThreshold:(float)edgeThreshold autoFrame:(bool)autoFrame printMetrics:(bool)printMetrics {
 
     
     double angleThreshold = 3;
     unsigned long long coloringSeed = 0;
     
     bool scaleSpecified = false;
+
+    struct {
+        double l, b, r, t;
+    } bounds = {
+        LARGE_VALUE, LARGE_VALUE, -LARGE_VALUE, -LARGE_VALUE
+    };
+    
+    msdfgen::Vector2 translate;
+    msdfgen::Vector2 scale = 1;
+    
+    double range = 1;
+    double pxRange = 2;
+    
+    double avgScale = .5*(scale.x+scale.y);
+    
+    enum {
+        RANGE_UNIT,
+        RANGE_PX
+    } rangeMode = RANGE_PX;
     
     bool skipColoring;
     msdfgen::Shape shape;
@@ -29,13 +48,7 @@
         return false;
     }
     shape.normalize();
-    
-    struct {
-        double l, b, r, t;
-    } bounds = {
-        LARGE_VALUE, LARGE_VALUE, -LARGE_VALUE, -LARGE_VALUE
-    };
-    
+
     if (autoFrame || printMetrics)
         shape.bounds(bounds.l, bounds.b, bounds.r, bounds.t);
     
@@ -49,11 +62,13 @@
             frame -= 2*range;
         if (l >= r || b >= t)
             l = 0, b = 0, r = 1, t = 1;
-        if (frame.x <= 0 || frame.y <= 0)
-            ABORT("Cannot fit the specified pixel range.");
+        if (frame.x <= 0 || frame.y <= 0) {
+            printf("Cannot fit the specified pixel range.");
+            return false;
+        }
         msdfgen::Vector2 dims(r-l, t-b);
         if (scaleSpecified)
-            translate = .5*(frame/scale-dims)-Vector2(l, b);
+            translate = .5*(frame/scale-dims)-msdfgen::Vector2(l, b);
         else {
             if (dims.x*frame.y < dims.y*frame.x) {
                 translate.set(.5*(frame.x/frame.y*dims.y-dims.x)-l, -b);
@@ -67,12 +82,39 @@
             translate += pxRange/scale;
     }
     
+    if (rangeMode == RANGE_PX)
+        range = pxRange/fmin(scale.x, scale.y);
+    
+    // Print metrics
+    if (printMetrics) {
+        FILE *out = stdout;
+        /*if (mode == METRICS && outputSpecified)
+            out = fopen(output, "w");
+        if (!out)
+            ABORT("Failed to write output file.");*/
+        if (shape.inverseYAxis)
+            fprintf(out, "inverseY = true\n");
+        if (bounds.r >= bounds.l && bounds.t >= bounds.b)
+            fprintf(out, "bounds = %.12g, %.12g, %.12g, %.12g\n", bounds.l, bounds.b, bounds.r, bounds.t);
+        /*if (svgDims.x != 0 && svgDims.y != 0)
+            fprintf(out, "dimensions = %.12g, %.12g\n", svgDims.x, svgDims.y);*/
+        /*if (glyphAdvance != 0)
+            fprintf(out, "advance = %.12g\n", glyphAdvance);*/
+        if (autoFrame) {
+            if (!scaleSpecified)
+                fprintf(out, "scale = %.12g\n", avgScale);
+            fprintf(out, "translate = %.12g, %.12g\n", translate.x, translate.y);
+        }
+        if (rangeMode == RANGE_PX)
+            fprintf(out, "range = %.12g\n", range);
+        /*if (mode == METRICS && outputSpecified)
+            fclose(out);*/
+    }
+    
     if (!skipColoring) {
         msdfgen::edgeColoringSimple(shape, angleThreshold, coloringSeed);
     }
-    
-    msdfgen::Vector2 scale = msdfgen::Vector2(1.0, 1.0);
-    msdfgen::Vector2 translate = msdfgen::Vector2(translateX, translateY);
+
     msdfgen::Bitmap<msdfgen::FloatRGB> output = msdfgen::Bitmap<msdfgen::FloatRGB>(width, height);
     msdfgen::generateMSDF(output, shape, range, scale, translate);
     int pixel = 0;
