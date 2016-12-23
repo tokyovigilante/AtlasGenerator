@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AtlasBridge.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>AtlasGenerator.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>943E09291E0494A4004A5B06</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>94BCFC3B1DF96B79004A5B06</key>
 		<dict>
 			<key>primary</key>

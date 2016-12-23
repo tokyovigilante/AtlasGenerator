@@ -45,17 +45,17 @@ class ShapeDescriptionWriter {
             let command: String
             let pointCount: Int
             
-            if !mySelf._contourStarted {
-                mySelf._contourStarted = true
-                mySelf._shapeDescription.append("{\n")
+            if !mySelf._contourStarted && element.type != .moveToPoint {
+                // invalid command outside contour
+                return
             }
             
             switch element.type {
             case .moveToPoint:
                 command = "moveTo"; pointCount = 1
-                if !mySelf._contourStarted {
-                    mySelf._startPoint = element.points[0]
-                }
+                mySelf._contourStarted = true
+                mySelf._shapeDescription.append("{\n")
+                mySelf._startPoint = element.points[0]
                 mySelf._currentPoint = element.points[0]
             case .addLineToPoint:
                 command = "lineTo"; pointCount = 1
@@ -85,6 +85,11 @@ class ShapeDescriptionWriter {
                 mySelf._currentPoint = element.points[2]
             case .closeSubpath:
                 command = "close"; pointCount = 0
+                if mySelf._startPoint != mySelf._currentPoint {
+                    mySelf._shapeDescription.append("\t") // fprintf(output, "\t");
+                    mySelf._shapeDescription.append(String(format: "%.12g, %.12g", mySelf._currentPoint.x, mySelf._currentPoint.y)) // writeCoord(output, e->p[0]);
+                    mySelf._shapeDescription.append(";\n") // fprintf(output, ";\n");
+                }
                 mySelf._contourStarted = false
                 mySelf._startPoint = CGPoint()
                 mySelf._currentPoint = mySelf._startPoint
@@ -92,6 +97,8 @@ class ShapeDescriptionWriter {
                 mySelf._shapeDescription.append("}\n") // fprintf(output, "}\n");
                 mySelf._success = true
             }
+            //let points = Array(UnsafeBufferPointer(start: element.points, count: pointCount))
+            //print("\(command) \(points)")
         })
         if !_success {
             return nil

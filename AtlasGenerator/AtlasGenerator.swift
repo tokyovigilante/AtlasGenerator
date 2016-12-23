@@ -91,9 +91,10 @@ class AtlasGenerator {
         var imageData = [UInt8](repeating: 0, count: textureSize * textureSize * 4)
         let glyphsPerRow = textureSize / Int(glyphWidth * 4)
         
+        let cgFont = CTFontCopyGraphicsFont(font, nil)
+        
         for glyph in 0..<UInt16(glyphCount) {
             
-            let cgFont = CTFontCopyGraphicsFont(font, nil)
             let glyphName = cgFont.name(for: glyph) ?? "Unknown" as CFString
             
             var boundingRect = CGRect()
@@ -129,8 +130,8 @@ class AtlasGenerator {
                 continue
             }
                         
-            var bitmap = [UInt8](repeating: 0, count: Int(glyphWidth) * Int(glyphHeight) * 4)
-            let success = MSDFGenBridge.generateMSDF(&bitmap, width: Int32(glyphWidth), height: Int32(glyphHeight), shapeDesc: shapeDescription, translateX: 0, translateY: 0, edgeThreshold: 1.0, autoFrame: true, printMetrics: true)
+            var bitmap = [UInt8](repeating: 0, count: Int(insetWidth) * Int(insetHeight) * 4)
+            let success = MSDFGenBridge.generateMSDF(&bitmap, width: Int32(insetWidth), height: Int32(insetHeight), shapeDesc: shapeDescription, translateX: 0, translateY: 0, edgeThreshold: 1.0, autoFrame: true, printMetrics: false)
             if !success {
                 continue
             }
@@ -147,9 +148,11 @@ class AtlasGenerator {
             let imageRow = Int(glyph) / Int(glyphWidth)
             let imageColumn = Int(glyph) % Int(glyphWidth)
             
-            for i in 1..<Int(insetHeight) {
-                let offset = (imageRow * Int(glyphWidth) + i) * Int(textureSize) + imageColumn * Int(glyphWidth)
-                memcpy(&imageData+offset, &bitmap+i*Int(insetWidth), Int(glyphWidth)*4)
+            let topLeft = (imageRow * Int(glyphHeight) * textureSize * 4) + textureSize * 4 + (imageColumn * Int(glyphWidth) * 4)
+            for i in 0..<Int(insetHeight) {
+                let offset = topLeft + i * textureSize * 4 + 4
+                    //(i + 1) * Int(textureSize) + imageRow * Int(glyphWidth) + imageColumn * Int(glyphWidth) + 1
+                memcpy(&imageData+offset, &bitmap+i*Int(insetWidth)*4, Int(insetWidth)*4)
             }
             /*
              context.addPath(path)
