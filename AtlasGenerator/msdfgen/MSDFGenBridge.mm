@@ -14,7 +14,7 @@
 
 @implementation MSDFGenBridge
 
-+(bool)generateMSDF:(uint8_t *)bitmap width:(int)width height:(int)height shapeDesc:(const char *)shapeDesc translateX:(float)translateX translateY:(float)translateY edgeThreshold:(float)edgeThreshold autoFrame:(bool)autoFrame printMetrics:(bool)printMetrics {
++(bool)generateMSDF:(nonnull uint8_t *)bitmap width:(int)width height:(int)height shapeDesc:(const char *)shapeDesc translateX:(float)translateX translateY:(float)translateY edgeThreshold:(float)edgeThreshold autoFrame:(bool)autoFrame printMetrics:(bool)printMetrics scaledBounds:(nullable CGRect *)boundsRect {
 
     
     double angleThreshold = 3;
@@ -49,8 +49,10 @@
     }
     shape.normalize();
 
-    if (autoFrame || printMetrics)
+    if (autoFrame || printMetrics) {
         shape.bounds(bounds.l, bounds.b, bounds.r, bounds.t);
+    }
+    
     
     // Auto-frame
     if (autoFrame) {
@@ -84,6 +86,20 @@
     
     if (rangeMode == RANGE_PX)
         range = pxRange/fmin(scale.x, scale.y);
+    
+    if (boundsRect != nil && autoFrame) {
+        CGAffineTransform scaleTransform = CGAffineTransformMakeScale(CGFloat(avgScale), CGFloat(avgScale));
+        CGAffineTransform translateTransform = CGAffineTransformMake(1, 0, 0, 1, CGFloat(translate.x), CGFloat(translate.y));
+        
+        CGPoint origin = CGPointMake(CGFloat(bounds.l), CGFloat(bounds.b));
+        origin = CGPointApplyAffineTransform(origin, translateTransform);
+
+        CGSize size = CGSizeMake(CGFloat(bounds.r - bounds.l), CGFloat(bounds.t - bounds.b));
+        size = CGSizeApplyAffineTransform(size, scaleTransform);
+
+        boundsRect->origin = origin;
+        boundsRect->size = size;
+    }
     
     // Print metrics
     if (printMetrics) {

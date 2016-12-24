@@ -11,6 +11,7 @@
 		943E09391E04951A004A5B06 /* libmsdfgen.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */; };
 		943E093A1E049524004A5B06 /* MSDFGenBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		943E093D1E049544004A5B06 /* libAtlasBridge.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 943E092A1E0494A4004A5B06 /* libAtlasBridge.dylib */; };
+		9442BF901E0E17DA001A40C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9442BF8F1E0E17DA001A40C8 /* CoreGraphics.framework */; };
 		94BCFC401DF96B79004A5B06 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC3F1DF96B79004A5B06 /* main.swift */; };
 		94BCFC471DF96C87004A5B06 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC461DF96C87004A5B06 /* ConsoleIO.swift */; };
 		94BCFC491DF96D3D004A5B06 /* AtlasGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFC481DF96D3D004A5B06 /* AtlasGenerator.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		943E092A1E0494A4004A5B06 /* libAtlasBridge.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAtlasBridge.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9442BF8F1E0E17DA001A40C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		94BCFC3C1DF96B79004A5B06 /* atlasgenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = atlasgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BCFC3F1DF96B79004A5B06 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		94BCFC461DF96C87004A5B06 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9442BF901E0E17DA001A40C8 /* CoreGraphics.framework in Frameworks */,
 				943E09391E04951A004A5B06 /* libmsdfgen.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +157,14 @@
 			name = AtlasBridge;
 			sourceTree = "<group>";
 		};
+		9442BF8E1E0E17DA001A40C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9442BF8F1E0E17DA001A40C8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		94BCFC331DF96B79004A5B06 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +172,7 @@
 				94BCFC521DF9F05E004A5B06 /* msdfgen */,
 				94BCFC3E1DF96B79004A5B06 /* AtlasGenerator */,
 				94BCFC3D1DF96B79004A5B06 /* Products */,
+				9442BF8E1E0E17DA001A40C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

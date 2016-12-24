@@ -34,7 +34,7 @@ class AtlasGenerator {
     }
     
     private func openFont(name: String) -> CTFont? {
-        let font = CTFontCreateWithName((name as NSString), 30, nil)
+        let font = CTFontCreateWithName((name as NSString), 31, nil)
         let returnedFontName = CTFontCopyPostScriptName(font)
         if returnedFontName as String == name {
             return font
@@ -76,20 +76,23 @@ class AtlasGenerator {
     
     private func renderGlyphs (font: CTFont) {
         
-        let insetWidth = glyphWidth - 2
-        let insetHeight = glyphHeight - 2
+        let insetWidth = glyphWidth - 1
+        let insetHeight = glyphHeight - 1
+        
+        let fTextureSize = CGFloat(textureSize)
         
         let glyphCount = CTFontGetGlyphCount(font)
+        
         let glyphMargin = CGFloat(estimatedLineWidthForFont(font))
-
+        
         let fontAscent = CTFontGetAscent(font)
         let fontDescent = CTFontGetDescent(font)
         
         var origin = CGPoint(x: 0, y: fontAscent)
         var maxYCoordForLine: CGFloat = -1
-        
+                
         var imageData = [UInt8](repeating: 0, count: textureSize * textureSize * 4)
-        let glyphsPerRow = textureSize / Int(glyphWidth * 4)
+        //let glyphsPerRow = textureSize / Int(glyphWidth * 4)
         
         let cgFont = CTFontCopyGraphicsFont(font, nil)
         
@@ -102,83 +105,52 @@ class AtlasGenerator {
             
             print("\(glyphName): glyph \(glyph+1) of \(glyphCount), boundingRect: \(boundingRect)")
             
-            if (origin.x + boundingRect.maxX + glyphMargin > glyphWidth) {
-             origin.x = 0
-             origin.y = maxYCoordForLine + glyphMargin + fontDescent
-             maxYCoordForLine = -1
-             }
-             
-             if origin.y + boundingRect.maxY > maxYCoordForLine {
-             maxYCoordForLine = origin.y + boundingRect.maxY
-             }
-             
-             let glyphOriginX = origin.x - boundingRect.origin.x + (glyphMargin * 0.5)
-             let glyphOriginY = glyphHeight - (origin.y + (glyphMargin * 0.5))
-            
-            
             guard let path = CTFontCreatePathForGlyph(font, glyph, nil) else {
                 continue
             }
             if path.isEmpty {
                 print("Empty path for glyph \(glyph)")
                 continue
-            } 
+            }
             
             let descriptionWriter = ShapeDescriptionWriter(path: path)
             guard let shapeDescription = descriptionWriter.generate() else {
                 print("Could not generate ShapeDescriptionWriter description for glyph \(glyph)")
                 continue
             }
-                        
+            
             var bitmap = [UInt8](repeating: 0, count: Int(insetWidth) * Int(insetHeight) * 4)
-            let success = MSDFGenBridge.generateMSDF(&bitmap, width: Int32(insetWidth), height: Int32(insetHeight), shapeDesc: shapeDescription, translateX: 0, translateY: 0, edgeThreshold: 1.0, autoFrame: true, printMetrics: false)
-            if !success {
+            var glyphPathBoundingRect = CGRect.null
+            
+            let success = MSDFGenBridge.generateMSDF(&bitmap, width: Int32(insetWidth), height: Int32(insetHeight), shapeDesc: shapeDescription, translateX: 0, translateY: 0, edgeThreshold: 1.0, autoFrame: true, printMetrics: true, scaledBounds: &glyphPathBoundingRect)
+            
+            if !success || glyphPathBoundingRect == CGRect.null {
                 continue
             }
-            /*
-            let bitmapInfo: CGBitmapInfo = [ CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipLast.rawValue) ]
-            
-            let context = CGContext.init(data: &bitmap, width: Int(glyphWidth), height: Int(glyphWidth), bitsPerComponent: 8, bytesPerRow: 4*Int(glyphWidth), space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: bitmapInfo.rawValue, releaseCallback: nil, releaseInfo: nil)
-            guard let image = context?.makeImage() else {
-                return
-            }
-            let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
-            nsImage.isValid*/
             
             let imageRow = Int(glyph) / Int(glyphWidth)
             let imageColumn = Int(glyph) % Int(glyphWidth)
             
-            let topLeft = (imageRow * Int(glyphHeight) * textureSize * 4) + textureSize * 4 + (imageColumn * Int(glyphWidth) * 4)
+            let topLeft = (imageRow * Int(glyphHeight) * textureSize + textureSize + imageColumn * Int(glyphWidth)) * 4
             for i in 0..<Int(insetHeight) {
                 let offset = topLeft + i * textureSize * 4 + 4
-                    //(i + 1) * Int(textureSize) + imageRow * Int(glyphWidth) + imageColumn * Int(glyphWidth) + 1
                 memcpy(&imageData+offset, &bitmap+i*Int(insetWidth)*4, Int(insetWidth)*4)
             }
-            /*
-             context.addPath(path)
-             context.fillPath()
+            
+            let glyphOrigin = CGPoint(x: CGFloat(imageRow) * glyphWidth, y: CGFloat(imageColumn) * glyphWidth)
+ 
+            
+             let texCoordLeft = glyphPathBoundingRect.origin.x / fTextureSize
+             let texCoordRight = (glyphPathBoundingRect.origin.x + glyphPathBoundingRect.size.width) / fTextureSize
+             let texCoordTop = glyphPathBoundingRect.origin.y / fTextureSize
+             let texCoordBottom = (glyphPathBoundingRect.origin.y + glyphPathBoundingRect.size.height) / fTextureSize
              
-             var glyphPathBoundingRect = path.boundingBoxOfPath
-             
-             // The null rect (i.e., the bounding rect of an empty path) is problematic
-             // because it has its origin at (+inf, +inf); we fix that up here
-             if ((glyphPathBoundingRect.equalTo(CGRect.null)) != nil) {
-             glyphPathBoundingRect = CGRect.zero
-             }
-             
-             let texCoordLeft = glyphPathBoundingRect.origin.x / fWidth
-             let texCoordRight = (glyphPathBoundingRect.origin.x + glyphPathBoundingRect.size.width) / fWidth
-             let texCoordTop = glyphPathBoundingRect.origin.y / fHeight
-             let texCoordBottom = (glyphPathBoundingRect.origin.y + glyphPathBoundingRect.size.height) / fHeight
-             
-             let descriptor = GlyphDescriptor(
+             /*let descriptor = GlyphDescriptor(
              glyphIndex: glyph,
              topLeftTexCoord: CGPoint(x: texCoordLeft, y: texCoordTop),
              bottomRightTexCoord: CGPoint(x: texCoordRight, y: texCoordBottom)
              )
-             glyphDescriptors.append(descriptor)
-             
-             origin.x += boundingRect.width + glyphMargin*/
+             glyphDescriptors.append(descriptor)*/
         }
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -197,7 +169,7 @@ class AtlasGenerator {
             return
         }
         let nsImage = NSImage(cgImage: image, size: CGSize(width: glyphWidth, height: glyphHeight))
-        nsImage.isValid
+        _ = nsImage.isValid
         
         // Turn off antialiasing so we only get fully-on or fully-off pixels.
         // This implicitly disables subpixel antialiasing and hinting.
