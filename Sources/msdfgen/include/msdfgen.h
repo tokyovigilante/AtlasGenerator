@@ -15,14 +15,14 @@
  *
  */
 
-#include "core/arithmetics.hpp"
-#include "core/Vector2.h"
-#include "core/Shape.h"
-#include "core/Bitmap.h"
-#include "core/edge-coloring.h"
-#include "core/render-sdf.h"
-#include "core/save-bmp.h"
-#include "core/shape-description.h"
+#include "arithmetics.hpp"
+#include "Vector2.h"
+#include "Shape.h"
+#include "Bitmap.h"
+#include "edge-coloring.h"
+#include "render-sdf.h"
+#include "save-bmp.h"
+#include "shape-description.h"
 
 #define MSDFGEN_VERSION "1.3"
 

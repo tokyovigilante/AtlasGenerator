@@ -1,5 +1,5 @@
 
-#include "Contour.h"
+#include "include/Contour.h"
 
 namespace msdfgen {
 

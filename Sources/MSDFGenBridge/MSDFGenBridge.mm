@@ -6,7 +6,7 @@
 //  Copyright © 2016 Ryan Walklin. All rights reserved.
 //
 
-#import "MSDFGenBridge.h"
+#import "include/MSDFGenBridge.h"
 
 #import "msdfgen.h"
 

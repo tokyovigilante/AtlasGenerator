@@ -1,5 +1,5 @@
 
-#include "shape-description.h"
+#include "include/shape-description.h"
 
 namespace msdfgen {
 

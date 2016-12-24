@@ -1,5 +1,5 @@
 
-#include "Shape.h"
+#include "include/Shape.h"
 
 namespace msdfgen {
 

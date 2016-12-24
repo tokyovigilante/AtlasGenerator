@@ -1,7 +1,7 @@
 
-#include "render-sdf.h"
+#include "include/render-sdf.h"
 
-#include "arithmetics.hpp"
+#include "include/arithmetics.hpp"
 
 namespace msdfgen {
 

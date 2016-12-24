@@ -1,7 +1,7 @@
 
-#include "../msdfgen.h"
+#include "include/msdfgen.h"
 
-#include "arithmetics.hpp"
+#include "include/arithmetics.hpp"
 
 namespace msdfgen {
 
