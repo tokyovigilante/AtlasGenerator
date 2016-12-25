@@ -8,7 +8,7 @@
 
 #import "include/MSDFGenBridge.h"
 
-#import "msdfgen.h"
+#import "../msdfgen/include/msdfgen.h"
 
 #define LARGE_VALUE 1e240
 
@@ -87,8 +87,8 @@
     if (rangeMode == RANGE_PX)
         range = pxRange/fmin(scale.x, scale.y);
     
-    if (boundsRect != nil && autoFrame) {
         CGAffineTransform scaleTransform = CGAffineTransformMakeScale(CGFloat(avgScale), CGFloat(avgScale));
+    if (boundsRect != nil && autoFrame) {
         CGAffineTransform translateTransform = CGAffineTransformMake(1, 0, 0, 1, CGFloat(translate.x), CGFloat(translate.y));
         
         CGPoint origin = CGPointMake(CGFloat(bounds.l), CGFloat(bounds.b));

@@ -1,0 +1,634 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9420FFA41E0F8939001A40C8 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF871E0F8939001A40C8 /* Bitmap.cpp */; };
+		9420FFA51E0F8939001A40C8 /* Contour.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF881E0F8939001A40C8 /* Contour.cpp */; };
+		9420FFA61E0F8939001A40C8 /* edge-coloring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF891E0F8939001A40C8 /* edge-coloring.cpp */; };
+		9420FFA71E0F8939001A40C8 /* edge-segments.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF8A1E0F8939001A40C8 /* edge-segments.cpp */; };
+		9420FFA81E0F8939001A40C8 /* EdgeHolder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF8B1E0F8939001A40C8 /* EdgeHolder.cpp */; };
+		9420FFA91E0F8939001A40C8 /* equation-solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF8C1E0F8939001A40C8 /* equation-solver.cpp */; };
+		9420FFAA1E0F8939001A40C8 /* render-sdf.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF8E1E0F8939001A40C8 /* render-sdf.h */; };
+		9420FFAB1E0F8939001A40C8 /* Bitmap.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF8F1E0F8939001A40C8 /* Bitmap.h */; };
+		9420FFAC1E0F8939001A40C8 /* SignedDistance.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF901E0F8939001A40C8 /* SignedDistance.h */; };
+		9420FFAD1E0F8939001A40C8 /* save-bmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF911E0F8939001A40C8 /* save-bmp.h */; };
+		9420FFAE1E0F8939001A40C8 /* arithmetics.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF921E0F8939001A40C8 /* arithmetics.hpp */; };
+		9420FFAF1E0F8939001A40C8 /* edge-coloring.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF931E0F8939001A40C8 /* edge-coloring.h */; };
+		9420FFB01E0F8939001A40C8 /* Contour.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF941E0F8939001A40C8 /* Contour.h */; };
+		9420FFB11E0F8939001A40C8 /* equation-solver.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF951E0F8939001A40C8 /* equation-solver.h */; };
+		9420FFB21E0F8939001A40C8 /* Shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF961E0F8939001A40C8 /* Shape.h */; };
+		9420FFB31E0F8939001A40C8 /* edge-segments.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF971E0F8939001A40C8 /* edge-segments.h */; };
+		9420FFB41E0F8939001A40C8 /* Vector2.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF981E0F8939001A40C8 /* Vector2.h */; };
+		9420FFB51E0F8939001A40C8 /* shape-description.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF991E0F8939001A40C8 /* shape-description.h */; };
+		9420FFB61E0F8939001A40C8 /* EdgeColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF9A1E0F8939001A40C8 /* EdgeColor.h */; };
+		9420FFB71E0F8939001A40C8 /* EdgeHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF9B1E0F8939001A40C8 /* EdgeHolder.h */; };
+		9420FFB81E0F8939001A40C8 /* msdfgen.h in Headers */ = {isa = PBXBuildFile; fileRef = 9420FF9C1E0F8939001A40C8 /* msdfgen.h */; };
+		9420FFB91E0F8939001A40C8 /* msdfgen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF9D1E0F8939001A40C8 /* msdfgen.cpp */; };
+		9420FFBA1E0F8939001A40C8 /* render-sdf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF9E1E0F8939001A40C8 /* render-sdf.cpp */; };
+		9420FFBB1E0F8939001A40C8 /* save-bmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FF9F1E0F8939001A40C8 /* save-bmp.cpp */; };
+		9420FFBC1E0F8939001A40C8 /* shape-description.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFA01E0F8939001A40C8 /* shape-description.cpp */; };
+		9420FFBD1E0F8939001A40C8 /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFA11E0F8939001A40C8 /* Shape.cpp */; };
+		9420FFBE1E0F8939001A40C8 /* SignedDistance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFA21E0F8939001A40C8 /* SignedDistance.cpp */; };
+		9420FFBF1E0F8939001A40C8 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFA31E0F8939001A40C8 /* Vector2.cpp */; };
+		9420FFC61E0F894F001A40C8 /* AtlasGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFC21E0F894F001A40C8 /* AtlasGenerator.swift */; };
+		9420FFC71E0F894F001A40C8 /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFC31E0F894F001A40C8 /* ConsoleIO.swift */; };
+		9420FFC81E0F894F001A40C8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFC41E0F894F001A40C8 /* main.swift */; };
+		9420FFC91E0F894F001A40C8 /* ShapeDescriptionWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9420FFC51E0F894F001A40C8 /* ShapeDescriptionWriter.swift */; };
+		943E09341E0494FC004A5B06 /* MSDFGenBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94BCFCBC1DFAC3C4004A5B06 /* MSDFGenBridge.mm */; };
+		943E09391E04951A004A5B06 /* libmsdfgen.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */; };
+		943E093A1E049524004A5B06 /* MSDFGenBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		943E093D1E049544004A5B06 /* libAtlasBridge.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 943E092A1E0494A4004A5B06 /* libAtlasBridge.dylib */; };
+		9442BF901E0E17DA001A40C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9442BF8F1E0E17DA001A40C8 /* CoreGraphics.framework */; };
+		94BCFCBA1DFA9974004A5B06 /* libmsdfgen.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */; };
+		94BCFCBD1DFAC3C4004A5B06 /* MSDFGenBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		943E09371E049513004A5B06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94BCFC341DF96B79004A5B06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94BCFC4D1DF9F053004A5B06;
+			remoteInfo = msdfgen;
+		};
+		943E093B1E04953B004A5B06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94BCFC341DF96B79004A5B06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 943E09291E0494A4004A5B06;
+			remoteInfo = AtlasBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94BCFC3A1DF96B79004A5B06 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9420FF871E0F8939001A40C8 /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bitmap.cpp; path = Sources/msdfgen/Bitmap.cpp; sourceTree = "<group>"; };
+		9420FF881E0F8939001A40C8 /* Contour.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Contour.cpp; path = Sources/msdfgen/Contour.cpp; sourceTree = "<group>"; };
+		9420FF891E0F8939001A40C8 /* edge-coloring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "edge-coloring.cpp"; path = "Sources/msdfgen/edge-coloring.cpp"; sourceTree = "<group>"; };
+		9420FF8A1E0F8939001A40C8 /* edge-segments.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "edge-segments.cpp"; path = "Sources/msdfgen/edge-segments.cpp"; sourceTree = "<group>"; };
+		9420FF8B1E0F8939001A40C8 /* EdgeHolder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EdgeHolder.cpp; path = Sources/msdfgen/EdgeHolder.cpp; sourceTree = "<group>"; };
+		9420FF8C1E0F8939001A40C8 /* equation-solver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "equation-solver.cpp"; path = "Sources/msdfgen/equation-solver.cpp"; sourceTree = "<group>"; };
+		9420FF8E1E0F8939001A40C8 /* render-sdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "render-sdf.h"; sourceTree = "<group>"; };
+		9420FF8F1E0F8939001A40C8 /* Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitmap.h; sourceTree = "<group>"; };
+		9420FF901E0F8939001A40C8 /* SignedDistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignedDistance.h; sourceTree = "<group>"; };
+		9420FF911E0F8939001A40C8 /* save-bmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "save-bmp.h"; sourceTree = "<group>"; };
+		9420FF921E0F8939001A40C8 /* arithmetics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = arithmetics.hpp; sourceTree = "<group>"; };
+		9420FF931E0F8939001A40C8 /* edge-coloring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "edge-coloring.h"; sourceTree = "<group>"; };
+		9420FF941E0F8939001A40C8 /* Contour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contour.h; sourceTree = "<group>"; };
+		9420FF951E0F8939001A40C8 /* equation-solver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "equation-solver.h"; sourceTree = "<group>"; };
+		9420FF961E0F8939001A40C8 /* Shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
+		9420FF971E0F8939001A40C8 /* edge-segments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "edge-segments.h"; sourceTree = "<group>"; };
+		9420FF981E0F8939001A40C8 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		9420FF991E0F8939001A40C8 /* shape-description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "shape-description.h"; sourceTree = "<group>"; };
+		9420FF9A1E0F8939001A40C8 /* EdgeColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeColor.h; sourceTree = "<group>"; };
+		9420FF9B1E0F8939001A40C8 /* EdgeHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EdgeHolder.h; sourceTree = "<group>"; };
+		9420FF9C1E0F8939001A40C8 /* msdfgen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msdfgen.h; sourceTree = "<group>"; };
+		9420FF9D1E0F8939001A40C8 /* msdfgen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = msdfgen.cpp; path = Sources/msdfgen/msdfgen.cpp; sourceTree = "<group>"; };
+		9420FF9E1E0F8939001A40C8 /* render-sdf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "render-sdf.cpp"; path = "Sources/msdfgen/render-sdf.cpp"; sourceTree = "<group>"; };
+		9420FF9F1E0F8939001A40C8 /* save-bmp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "save-bmp.cpp"; path = "Sources/msdfgen/save-bmp.cpp"; sourceTree = "<group>"; };
+		9420FFA01E0F8939001A40C8 /* shape-description.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "shape-description.cpp"; path = "Sources/msdfgen/shape-description.cpp"; sourceTree = "<group>"; };
+		9420FFA11E0F8939001A40C8 /* Shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shape.cpp; path = Sources/msdfgen/Shape.cpp; sourceTree = "<group>"; };
+		9420FFA21E0F8939001A40C8 /* SignedDistance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SignedDistance.cpp; path = Sources/msdfgen/SignedDistance.cpp; sourceTree = "<group>"; };
+		9420FFA31E0F8939001A40C8 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vector2.cpp; path = Sources/msdfgen/Vector2.cpp; sourceTree = "<group>"; };
+		9420FFC21E0F894F001A40C8 /* AtlasGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AtlasGenerator.swift; path = Sources/AtlasGenerator/AtlasGenerator.swift; sourceTree = SOURCE_ROOT; };
+		9420FFC31E0F894F001A40C8 /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleIO.swift; path = Sources/AtlasGenerator/ConsoleIO.swift; sourceTree = SOURCE_ROOT; };
+		9420FFC41E0F894F001A40C8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = Sources/AtlasGenerator/main.swift; sourceTree = SOURCE_ROOT; };
+		9420FFC51E0F894F001A40C8 /* ShapeDescriptionWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShapeDescriptionWriter.swift; path = Sources/AtlasGenerator/ShapeDescriptionWriter.swift; sourceTree = SOURCE_ROOT; };
+		9420FFCB1E0F89A1001A40C8 /* AtlasGenerator-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AtlasGenerator-Bridging-Header.h"; path = "Sources/AtlasGenerator/AtlasGenerator-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		943E092A1E0494A4004A5B06 /* libAtlasBridge.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAtlasBridge.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9442BF8F1E0E17DA001A40C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94BCFC3C1DF96B79004A5B06 /* atlasgenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = atlasgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmsdfgen.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDFGenBridge.h; path = Sources/MSDFGenBridge/include/MSDFGenBridge.h; sourceTree = "<group>"; };
+		94BCFCBC1DFAC3C4004A5B06 /* MSDFGenBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MSDFGenBridge.mm; path = Sources/MSDFGenBridge/MSDFGenBridge.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		943E09271E0494A4004A5B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9442BF901E0E17DA001A40C8 /* CoreGraphics.framework in Frameworks */,
+				943E09391E04951A004A5B06 /* libmsdfgen.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC391DF96B79004A5B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943E093D1E049544004A5B06 /* libAtlasBridge.dylib in Frameworks */,
+				94BCFCBA1DFA9974004A5B06 /* libmsdfgen.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC4B1DF9F053004A5B06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9420FF8D1E0F8939001A40C8 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9420FF8E1E0F8939001A40C8 /* render-sdf.h */,
+				9420FF8F1E0F8939001A40C8 /* Bitmap.h */,
+				9420FF901E0F8939001A40C8 /* SignedDistance.h */,
+				9420FF911E0F8939001A40C8 /* save-bmp.h */,
+				9420FF921E0F8939001A40C8 /* arithmetics.hpp */,
+				9420FF931E0F8939001A40C8 /* edge-coloring.h */,
+				9420FF941E0F8939001A40C8 /* Contour.h */,
+				9420FF951E0F8939001A40C8 /* equation-solver.h */,
+				9420FF961E0F8939001A40C8 /* Shape.h */,
+				9420FF971E0F8939001A40C8 /* edge-segments.h */,
+				9420FF981E0F8939001A40C8 /* Vector2.h */,
+				9420FF991E0F8939001A40C8 /* shape-description.h */,
+				9420FF9A1E0F8939001A40C8 /* EdgeColor.h */,
+				9420FF9B1E0F8939001A40C8 /* EdgeHolder.h */,
+				9420FF9C1E0F8939001A40C8 /* msdfgen.h */,
+			);
+			name = include;
+			path = Sources/msdfgen/include;
+			sourceTree = "<group>";
+		};
+		943E09331E0494C8004A5B06 /* AtlasBridge */ = {
+			isa = PBXGroup;
+			children = (
+				94BCFCBB1DFAC3C4004A5B06 /* MSDFGenBridge.h */,
+				94BCFCBC1DFAC3C4004A5B06 /* MSDFGenBridge.mm */,
+			);
+			name = AtlasBridge;
+			sourceTree = "<group>";
+		};
+		9442BF8E1E0E17DA001A40C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9442BF8F1E0E17DA001A40C8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94BCFC331DF96B79004A5B06 = {
+			isa = PBXGroup;
+			children = (
+				943E09331E0494C8004A5B06 /* AtlasBridge */,
+				94BCFC521DF9F05E004A5B06 /* msdfgen */,
+				94BCFC3E1DF96B79004A5B06 /* AtlasGenerator */,
+				94BCFC3D1DF96B79004A5B06 /* Products */,
+				9442BF8E1E0E17DA001A40C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		94BCFC3D1DF96B79004A5B06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94BCFC3C1DF96B79004A5B06 /* atlasgenerator */,
+				94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */,
+				943E092A1E0494A4004A5B06 /* libAtlasBridge.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94BCFC3E1DF96B79004A5B06 /* AtlasGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				9420FFCB1E0F89A1001A40C8 /* AtlasGenerator-Bridging-Header.h */,
+				9420FFC21E0F894F001A40C8 /* AtlasGenerator.swift */,
+				9420FFC31E0F894F001A40C8 /* ConsoleIO.swift */,
+				9420FFC41E0F894F001A40C8 /* main.swift */,
+				9420FFC51E0F894F001A40C8 /* ShapeDescriptionWriter.swift */,
+			);
+			path = AtlasGenerator;
+			sourceTree = "<group>";
+		};
+		94BCFC521DF9F05E004A5B06 /* msdfgen */ = {
+			isa = PBXGroup;
+			children = (
+				9420FF871E0F8939001A40C8 /* Bitmap.cpp */,
+				9420FF881E0F8939001A40C8 /* Contour.cpp */,
+				9420FF891E0F8939001A40C8 /* edge-coloring.cpp */,
+				9420FF8A1E0F8939001A40C8 /* edge-segments.cpp */,
+				9420FF8B1E0F8939001A40C8 /* EdgeHolder.cpp */,
+				9420FF8C1E0F8939001A40C8 /* equation-solver.cpp */,
+				9420FF8D1E0F8939001A40C8 /* include */,
+				9420FF9D1E0F8939001A40C8 /* msdfgen.cpp */,
+				9420FF9E1E0F8939001A40C8 /* render-sdf.cpp */,
+				9420FF9F1E0F8939001A40C8 /* save-bmp.cpp */,
+				9420FFA01E0F8939001A40C8 /* shape-description.cpp */,
+				9420FFA11E0F8939001A40C8 /* Shape.cpp */,
+				9420FFA21E0F8939001A40C8 /* SignedDistance.cpp */,
+				9420FFA31E0F8939001A40C8 /* Vector2.cpp */,
+			);
+			name = msdfgen;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		943E09281E0494A4004A5B06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943E093A1E049524004A5B06 /* MSDFGenBridge.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC4C1DF9F053004A5B06 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9420FFAF1E0F8939001A40C8 /* edge-coloring.h in Headers */,
+				9420FFB01E0F8939001A40C8 /* Contour.h in Headers */,
+				9420FFB21E0F8939001A40C8 /* Shape.h in Headers */,
+				9420FFB81E0F8939001A40C8 /* msdfgen.h in Headers */,
+				9420FFB31E0F8939001A40C8 /* edge-segments.h in Headers */,
+				9420FFAA1E0F8939001A40C8 /* render-sdf.h in Headers */,
+				9420FFAB1E0F8939001A40C8 /* Bitmap.h in Headers */,
+				9420FFB11E0F8939001A40C8 /* equation-solver.h in Headers */,
+				94BCFCBD1DFAC3C4004A5B06 /* MSDFGenBridge.h in Headers */,
+				9420FFB41E0F8939001A40C8 /* Vector2.h in Headers */,
+				9420FFB51E0F8939001A40C8 /* shape-description.h in Headers */,
+				9420FFB71E0F8939001A40C8 /* EdgeHolder.h in Headers */,
+				9420FFAC1E0F8939001A40C8 /* SignedDistance.h in Headers */,
+				9420FFB61E0F8939001A40C8 /* EdgeColor.h in Headers */,
+				9420FFAE1E0F8939001A40C8 /* arithmetics.hpp in Headers */,
+				9420FFAD1E0F8939001A40C8 /* save-bmp.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		943E09291E0494A4004A5B06 /* AtlasBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943E09301E0494A4004A5B06 /* Build configuration list for PBXNativeTarget "AtlasBridge" */;
+			buildPhases = (
+				943E09261E0494A4004A5B06 /* Sources */,
+				943E09271E0494A4004A5B06 /* Frameworks */,
+				943E09281E0494A4004A5B06 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				943E09381E049513004A5B06 /* PBXTargetDependency */,
+			);
+			name = AtlasBridge;
+			productName = AtlasBridge;
+			productReference = 943E092A1E0494A4004A5B06 /* libAtlasBridge.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		94BCFC3B1DF96B79004A5B06 /* AtlasGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94BCFC431DF96B79004A5B06 /* Build configuration list for PBXNativeTarget "AtlasGenerator" */;
+			buildPhases = (
+				94BCFC381DF96B79004A5B06 /* Sources */,
+				94BCFC391DF96B79004A5B06 /* Frameworks */,
+				94BCFC3A1DF96B79004A5B06 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				943E093C1E04953B004A5B06 /* PBXTargetDependency */,
+			);
+			name = AtlasGenerator;
+			productName = AtlasGenerator;
+			productReference = 94BCFC3C1DF96B79004A5B06 /* atlasgenerator */;
+			productType = "com.apple.product-type.tool";
+		};
+		94BCFC4D1DF9F053004A5B06 /* msdfgen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94BCFC4F1DF9F053004A5B06 /* Build configuration list for PBXNativeTarget "msdfgen" */;
+			buildPhases = (
+				94BCFC4A1DF9F053004A5B06 /* Sources */,
+				94BCFC4B1DF9F053004A5B06 /* Frameworks */,
+				94BCFC4C1DF9F053004A5B06 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = msdfgen;
+			productName = msdfgen;
+			productReference = 94BCFC4E1DF9F053004A5B06 /* libmsdfgen.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94BCFC341DF96B79004A5B06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Ryan Walklin";
+				TargetAttributes = {
+					943E09291E0494A4004A5B06 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Manual;
+					};
+					94BCFC3B1DF96B79004A5B06 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+					94BCFC4D1DF9F053004A5B06 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 94BCFC371DF96B79004A5B06 /* Build configuration list for PBXProject "AtlasGenerator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94BCFC331DF96B79004A5B06;
+			productRefGroup = 94BCFC3D1DF96B79004A5B06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94BCFC3B1DF96B79004A5B06 /* AtlasGenerator */,
+				94BCFC4D1DF9F053004A5B06 /* msdfgen */,
+				943E09291E0494A4004A5B06 /* AtlasBridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		943E09261E0494A4004A5B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				943E09341E0494FC004A5B06 /* MSDFGenBridge.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC381DF96B79004A5B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9420FFC61E0F894F001A40C8 /* AtlasGenerator.swift in Sources */,
+				9420FFC91E0F894F001A40C8 /* ShapeDescriptionWriter.swift in Sources */,
+				9420FFC81E0F894F001A40C8 /* main.swift in Sources */,
+				9420FFC71E0F894F001A40C8 /* ConsoleIO.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94BCFC4A1DF9F053004A5B06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9420FFBE1E0F8939001A40C8 /* SignedDistance.cpp in Sources */,
+				9420FFA61E0F8939001A40C8 /* edge-coloring.cpp in Sources */,
+				9420FFBD1E0F8939001A40C8 /* Shape.cpp in Sources */,
+				9420FFBA1E0F8939001A40C8 /* render-sdf.cpp in Sources */,
+				9420FFA51E0F8939001A40C8 /* Contour.cpp in Sources */,
+				9420FFBF1E0F8939001A40C8 /* Vector2.cpp in Sources */,
+				9420FFA91E0F8939001A40C8 /* equation-solver.cpp in Sources */,
+				9420FFA71E0F8939001A40C8 /* edge-segments.cpp in Sources */,
+				9420FFB91E0F8939001A40C8 /* msdfgen.cpp in Sources */,
+				9420FFA41E0F8939001A40C8 /* Bitmap.cpp in Sources */,
+				9420FFA81E0F8939001A40C8 /* EdgeHolder.cpp in Sources */,
+				9420FFBC1E0F8939001A40C8 /* shape-description.cpp in Sources */,
+				9420FFBB1E0F8939001A40C8 /* save-bmp.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		943E09381E049513004A5B06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94BCFC4D1DF9F053004A5B06 /* msdfgen */;
+			targetProxy = 943E09371E049513004A5B06 /* PBXContainerItemProxy */;
+		};
+		943E093C1E04953B004A5B06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 943E09291E0494A4004A5B06 /* AtlasBridge */;
+			targetProxy = 943E093B1E04953B004A5B06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		943E09311E0494A4004A5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		943E09321E0494A4004A5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		94BCFC411DF96B79004A5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		94BCFC421DF96B79004A5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		94BCFC441DF96B79004A5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = atlasgenerator;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/AtlasGenerator/AtlasGenerator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		94BCFC451DF96B79004A5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = atlasgenerator;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/AtlasGenerator/AtlasGenerator-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		94BCFC501DF9F053004A5B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		94BCFC511DF9F053004A5B06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		943E09301E0494A4004A5B06 /* Build configuration list for PBXNativeTarget "AtlasBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				943E09311E0494A4004A5B06 /* Debug */,
+				943E09321E0494A4004A5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94BCFC371DF96B79004A5B06 /* Build configuration list for PBXProject "AtlasGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BCFC411DF96B79004A5B06 /* Debug */,
+				94BCFC421DF96B79004A5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94BCFC431DF96B79004A5B06 /* Build configuration list for PBXNativeTarget "AtlasGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BCFC441DF96B79004A5B06 /* Debug */,
+				94BCFC451DF96B79004A5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94BCFC4F1DF9F053004A5B06 /* Build configuration list for PBXNativeTarget "msdfgen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94BCFC501DF9F053004A5B06 /* Debug */,
+				94BCFC511DF9F053004A5B06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94BCFC341DF96B79004A5B06 /* Project object */;
+}
