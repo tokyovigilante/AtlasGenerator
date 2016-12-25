@@ -1,0 +1,4 @@
+.build/
+AtlasGenerator.xcodeproj/project.xcworkspace/xcuserdata/
+Package.pins
+Packages/
